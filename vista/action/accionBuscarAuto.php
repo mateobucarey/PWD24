@@ -1,33 +1,24 @@
 <?php
 include_once ('../../configuracion.php');
-//include_once ('../../control/ControlAuto.php'); 
-//include_once ('../../control/ControlPersona.php');
-//include_once ('../../util/funciones.php');
 
-// Obtén los datos del formulario
 $datos = darDatosSubmitted();
 
-// Extrae la patente del arreglo de datos
 $patente = isset($datos['patente']) ? $datos['patente'] : '';
 
-// Crea una instancia de ControlAuto
 $verAuto = new ControlAuto();
 
-// Busca el auto con la patente proporcionada
 $autos = $verAuto->buscar(['patente' => $patente]);
 
-// Verifica si se encontró algún auto
 if (count($autos) > 0) {
-    $auto = $autos[0]; // Tomamos el primer auto encontrado
+    $auto = $autos[0]; 
     $patente = $auto->getPatente();
     $marca = $auto->getMarca();
     $modelo = $auto->getModelo();
     $dniDuenio = $auto->getObjDuenio()->getNroDni();
 
-    // Obtener el nombre y apellido del dueño usando ControlPersona
     $verPersona = new ControlPersona();
     $personas = $verPersona->buscar(['nroDni' => $dniDuenio]);
-    $nombreDuenio = 'No disponible'; // Por defecto si no encuentra al dueño entonces no esta disponible
+    $nombreDuenio = 'No disponible'; 
     if (count($personas) > 0) {
         $persona = $personas[0];
         $nombreDuenio = $persona->getNombre() . ' ' . $persona->getApellido();

@@ -1,15 +1,10 @@
 <?php
 include_once '../../configuracion.php';
-//include_once '../../control/ControlPersona.php'; // Asegúrate de que la ruta sea correcta
-//include_once '../../util/funciones.php'; // Incluimos la función darDatosSubmitted()
 
-// Usamos darDatosSubmitted para obtener los datos enviados
 $datos = darDatosSubmitted();
 
-// Verificamos que todos los datos requeridos estén presentes
 if (isset($datos['nroDni']) && isset($datos['nombre']) && isset($datos['apellido']) && isset($datos['fechaNac']) && isset($datos['telefono']) && isset($datos['domicilio'])) {
     
-    // Recogemos los datos del formulario
     $param = [
         'nroDni' => $datos['nroDni'],
         'nombre' => $datos['nombre'],
@@ -19,13 +14,10 @@ if (isset($datos['nroDni']) && isset($datos['nombre']) && isset($datos['apellido
         'domicilio' => $datos['domicilio']
     ];
     
-    // Creamos una instancia de ControlPersona
     $verPersona = new ControlPersona();
     
-    // Intentamos dar de alta la nueva persona
     $exito = $verPersona->alta($param);
     
-    // Mostramos el mensaje correspondiente
     if ($exito) {
         $mensaje = "La persona fue cargada exitosamente.";
     } else {

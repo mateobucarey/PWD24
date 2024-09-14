@@ -1,22 +1,17 @@
 <?php
 include_once '../../configuracion.php';
-//include_once '../../control/ControlPersona.php'; // Ruta correcta al controlador de personas
-//include_once '../../util/funciones.php';         // Incluimos la función darDatosSubmitted()
 
-// Usamos la función darDatosSubmitted para obtener los datos enviados
 $datos = darDatosSubmitted();
 
-// Verificamos que se haya enviado el número de documento
 if (isset($datos['nroDni'])) {
     $nroDni = $datos['nroDni'];
 
-    // Buscar la persona por su número de documento
     $controlPersona = new ControlPersona();
     $paramPersona = ['nroDni' => $nroDni];
     $personaArray = $controlPersona->buscar($paramPersona);
 
     if (count($personaArray) > 0) {
-        // Suponemos que se encuentra solo una persona con ese documento
+
         $persona = $personaArray[0];
         $nombre = $persona->getNombre();
         $apellido = $persona->getApellido();

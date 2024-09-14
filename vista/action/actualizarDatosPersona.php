@@ -1,12 +1,8 @@
 <?php
 include_once '../../configuracion.php';
-//include_once '../../control/ControlPersona.php'; // Ruta correcta al controlador de personas
-//include_once '../../util/funciones.php';         // Incluimos la función darDatosSubmitted()
 
-// Usamos la función darDatosSubmitted para obtener los datos enviados
 $datos = darDatosSubmitted();
 
-// Verificamos que se hayan enviado los datos requeridos
 if (isset($datos['nroDni']) && isset($datos['nombre']) && isset($datos['apellido']) && isset($datos['fechaNac']) && isset($datos['telefono']) && isset($datos['domicilio'])) {
     $nroDni = $datos['nroDni'];
     $nombre = $datos['nombre'];
@@ -15,7 +11,6 @@ if (isset($datos['nroDni']) && isset($datos['nombre']) && isset($datos['apellido
     $telefono = $datos['telefono'];
     $domicilio = $datos['domicilio'];
 
-    // Actualizar los datos de la persona
     $controlPersona = new ControlPersona();
     $paramPersonaModificada = [
         'nroDni' => $nroDni,

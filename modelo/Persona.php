@@ -1,7 +1,4 @@
 <?php 
-
-//include_once('conector/BaseDatos.php');
-
 class Persona {
 
     /**REVISAR EL ID AUTOINCREMENTABLE

@@ -1,7 +1,5 @@
 <?php 
 
-//include_once('conector/BaseDatos.php');
-
 class Auto {
 
     private $patente;

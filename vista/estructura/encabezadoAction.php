@@ -9,11 +9,11 @@
                 <li class="nav-item"><a class="nav-link" href="../autospersonas.php">Autos de Personas</a></li>
                 <li class="nav-item"><a class="nav-link" href="../buscarauto.php">Buscar Auto</a></li>
                 <li class="nav-item"><a class="nav-link" href="../buscarpersona.php">Buscar Persona</a></li>
-                <li class="nav-item"><a class="nav-link" href="../cambiodueño.php">Cambio Dueño</a></li>
+                <li class="nav-item"><a class="nav-link" href="../cambioduenio.php">Cambio Dueño</a></li>
                 <li class="nav-item"><a class="nav-link" href="../listapersonas.php">Lista de Personas</a></li>
                 <li class="nav-item"><a class="nav-link" href="../nuevapersona.php">Nueva Persona</a></li>
                 <li class="nav-item"><a class="nav-link" href="../nuevoauto.php">Nuevo Auto</a></li>
-                <li class="nav-item"><a class="nav-link" href="../verauto.php">Ver Auto</a></li>
+                <li class="nav-item"><a class="nav-link" href="../verautos.php">Ver Auto</a></li>
             </ul>
         </div>
     </nav>

@@ -14,7 +14,6 @@ $personas = $persona->buscar([null]);
     <title>Lista de Personas</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="estructura/css/estilos.css">
-    <script src="estructura/js/validacionCampos.js"></script>
 </head>
 <body>
 <?php include_once('estructura/encabezado.php') ?>
